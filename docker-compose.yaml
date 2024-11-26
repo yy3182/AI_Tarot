@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  emilytarot:
+    image: emilytarot:latest
+    build:
+      context: ./
+    environment:
+      OPENAI_API_KEY: "${OPENAI_API_KEY?Variable not set}"
+      SESSION_DIR: "/app/tarotSessions"
+    volumes:
+      - ./src/streamlit_app.py:/app/streamlit_app.py
+      - ./local/tarot_sessions_dir:/app/tarotSessions
+    ports:
+      - 9999:8501
+
+volumes:
+  tarotSessions: {}

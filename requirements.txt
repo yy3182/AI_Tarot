@@ -1,0 +1,12 @@
+numpy==1.24.3
+    # via
+    #   altair
+    #   pandas
+    #   pyarrow
+    #   pydeck
+    #   streamlit
+openai==1.7.2
+    # via -r requirements.in
+streamlit==1.23.0
+
+
